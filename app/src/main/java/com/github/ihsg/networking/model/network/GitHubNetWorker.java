@@ -1,9 +1,10 @@
 package com.github.ihsg.networking.model.network;
 
+import android.util.Log;
+
 import com.github.ihsg.library.net.BaseNetWorker;
 import com.github.ihsg.library.net.NetLogLevel;
 import com.github.ihsg.library.net.ServerTimestampListener;
-import com.github.ihsg.library.util.LogUtil;
 import com.github.ihsg.networking.model.api.GitHubApi;
 
 import java.util.HashMap;
@@ -14,6 +15,8 @@ import java.util.HashMap;
 
 public class GitHubNetWorker extends BaseNetWorker {
 
+    private static final String TAG = "GitHubNetWorker";
+
     private static GitHubBaseUrl gitHubBaseUrl;
 
     public static GitHubApi createGitHubApiService() {
@@ -23,7 +26,7 @@ public class GitHubNetWorker extends BaseNetWorker {
                 .setServerTimestampListener(new ServerTimestampListener() {
                     @Override
                     public void onResponse(String serverTimestamp) {
-                        LogUtil.i(serverTimestamp);
+                        Log.i(TAG, serverTimestamp);
                     }
                 })
                 .setTimestampKey("Date")

@@ -1,7 +1,5 @@
 package com.github.ihsg.library.net;
 
-import com.github.ihsg.library.util.LogUtil;
-
 import java.io.EOFException;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -42,17 +40,17 @@ class NetLogInterceptor implements Interceptor {
         NetLogInterceptor.Logger DEFAULT = new Logger() {
             @Override
             public void log(String message) {
-                LogUtil.i(message);
+//                LogUtil.i(message);
             }
 
             @Override
             public void json(String message) {
-                LogUtil.json(message);
+//                LogUtil.json(message);
             }
 
             @Override
             public void xml(String message) {
-                LogUtil.xml(message);
+//                LogUtil.xml(message);
             }
         };
     }
